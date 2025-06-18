@@ -1641,8 +1641,8 @@ body.scrolled-past-hero {
     }
     
     .main-title h1 {
-        font-size: clamp(2.8rem, 8vw, 5rem);
-        line-height: 1.1;
+        font-size: clamp(4rem, 14vw, 7rem);
+        line-height: 1.0;
         margin-bottom: 1.5rem;
     }
     
@@ -1761,9 +1761,9 @@ body.scrolled-past-hero {
     }
     
     .main-title h1 {
-        font-size: clamp(2.4rem, 10vw, 4rem);
-        margin-bottom: 1rem;
-        line-height: 1.1;
+        font-size: clamp(4rem, 14vw, 7rem);
+        line-height: 1.0;
+        margin-bottom: 1.5rem;
     }
     
     .subtitle {
