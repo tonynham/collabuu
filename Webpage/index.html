@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Collabuu - Connect • Collaborate • Grow</title>
+    <meta name="description" content="The ultimate platform connecting businesses with influencers through advanced tokenomics and seamless collaboration.">
+    
+    <!-- Mobile & PWA Optimizations -->
+    <meta name="theme-color" content="#00b366">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Collabuu">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Performance Optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- DNS prefetch for performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.svg">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Fonts with display swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Main stylesheet with cache busting -->
+    <link rel="stylesheet" href="assets/css/landing-style.css?v=20250617p">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-wrapper">
+                    <svg class="logo-icon" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="30" r="12" fill="url(#gradient1)"/>
+                        <circle cx="30" cy="60" r="12" fill="url(#gradient2)"/>
+                        <circle cx="70" cy="60" r="12" fill="url(#gradient3)"/>
+                        <path d="M42 42L58 58M58 42L42 58" stroke="#00ff88" stroke-width="3"/>
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00ff88"/>
+                                <stop offset="100%" style="stop-color:#00d4ff"/>
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                <stop offset="100%" style="stop-color:#a855f7"/>
+                            </linearGradient>
+                            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff"/>
+                                <stop offset="100%" style="stop-color:#0099ff"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">Collabuu</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li class="nav-item-dynamic nav-item-hidden"><a href="#features" class="nav-link">Features</a></li>
+                    <li class="nav-item-dynamic nav-item-hidden"><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li class="nav-item-dynamic nav-item-hidden"><a href="#download" class="nav-link">Get App</a></li>
+                </ul>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+            
+            <div class="nav-cta">
+                <a href="#download" class="btn btn-app-store nav-item-hidden" id="nav-app-store">App Store</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Landing Section -->
+    <section class="hero-landing" id="hero">
+        <div class="geometric-background">
+            <div class="geometric-shape shape-1"></div>
+            <div class="geometric-shape shape-2"></div>
+            <div class="geometric-shape shape-3"></div>
+            <div class="geometric-shape shape-4"></div>
+            <div class="geometric-shape shape-5"></div>
+            <div class="geometric-shape shape-6"></div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Main Title -->
+                <div class="main-title">
+                    <h1>
+                        <span class="title-word">Connect</span>
+                        <span class="title-word">Collaborate</span>
+                        <span class="title-word">& Grow</span>
+                    </h1>
+                    <div class="title-accent">
+                        <span class="accent-dot"></span>
+                    </div>
+                </div>
+
+                <!-- App Store Buttons -->
+                <div class="app-store-buttons">
+                    <a href="#" class="store-btn google-play">
+                        <svg class="store-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5Z" fill="currentColor"/>
+                            <path d="M16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12Z" fill="currentColor"/>
+                            <path d="M20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.53 12.9 20.18 13.18L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81Z" fill="currentColor"/>
+                            <path d="M6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="#" class="store-btn app-store">
+                        <svg class="store-icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.13997 6.91 8.85997 6.88C10.15 6.85 11.36 7.72 12.11 7.72C12.86 7.72 14.28 6.68 15.84 6.84C16.41 6.87 18.05 7.1 19.05 8.82C18.95 8.89 17.06 10.1 17.08 12.4C17.1 15.24 19.56 16.2 19.58 16.21C19.54 16.3 19.12 17.74 18.71 19.5Z" fill="currentColor"/>
+                            <path d="M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Hero CTA -->
+                <div class="hero-cta">
+                    <p class="cta-text">Ready to get started?</p>
+                    <a href="#audience-selector" class="cta-button">
+                        <span>Choose Your Path</span>
+                        <svg class="cta-arrow" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Audience Selection -->
+    <section id="audience-selector" class="audience-selector-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Experience</h2>
+                <p class="section-subtitle">Tell us who you are and we'll personalize everything for you</p>
+            </div>
+            
+            <div class="main-audience-tabs">
+                <button class="main-tab-btn" data-audience="businesses">
+                    <div class="tab-icon">
+                        <img src="assets/images/business-icon.png" alt="Business" class="tab-icon-img" loading="lazy">
+                    </div>
+                    <div class="tab-content">
+                        <h3>For Businesses</h3>
+                        <p>Launch campaigns and grow sales</p>
+                    </div>
+                </button>
+                <button class="main-tab-btn" data-audience="influencers">
+                    <div class="tab-icon">
+                        <img src="assets/images/influencer-icon.png" alt="Influencer" class="tab-icon-img" loading="lazy">
+                    </div>
+                    <div class="tab-content">
+                        <h3>For Influencers</h3>
+                        <p>Monetize your influence</p>
+                    </div>
+                </button>
+                <button class="main-tab-btn" data-audience="customers">
+                    <div class="tab-icon">
+                        <img src="assets/images/customer-icon.png" alt="Customer" class="tab-icon-img" loading="lazy">
+                    </div>
+                    <div class="tab-content">
+                        <h3>For Customers</h3>
+                        <p>Discover deals and earn rewards</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Content Area -->
+    <div class="dynamic-content hidden" id="dynamic-content">
+        <!-- Businesses Content -->
+        <div class="audience-experience" id="businesses-experience">
+            <!-- Features Section for Businesses -->
+            <section id="features" class="features-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2 class="section-title">🔥 Features for Businesses</h2>
+                        <p class="section-subtitle">Supercharge Your Product Launches with Verified Influencer-Driven Sales</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/money.png" alt="Money" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Only Pay for Real Customers</h3>
+                                <p>Don't pay for likes or followers—pay only for verified in-store or online visits driven by influencer QR codes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/rocket.png" alt="Rocket" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Launch Campaigns in Minutes</h3>
+                                <p>Post your campaign details, fund it with tokens, and watch influencers apply to promote your brand.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/data-analytics.png" alt="Data Analytics" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Precision Matchmaking</h3>
+                                <p>Choose from a pool of influencers aligned with your niche, location, and audience.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/star.png" alt="Star" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Trackable ROI</h3>
+                                <p>Every scanned QR code is tracked to a specific influencer, giving you clear customer attribution.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works for Businesses -->
+            <section id="how-it-works" class="how-it-works-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2 class="section-title">🟢 How It Works</h2>
+                        <p class="section-subtitle">Simple 3-step process for businesses</p>
+                    </div>
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Launch a Campaign</h3>
+                                <p>Set your offer, budget in tokens, and campaign goals.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Choose Your Influencers</h3>
+                                <p>Browse applicants and pick the creators that match your brand.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Pay for Verified Customers</h3>
+                                <p>Only pay when someone walks in, scans the QR, and redeems the deal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tokenomics Section for Businesses -->
+            <section id="tokenomics" class="tokenomics-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2 class="section-title">Choose Your Token Pack</h2>
+                        <p class="section-subtitle">Power your campaigns with our flexible token system</p>
+                    </div>
+                    
+                    <div class="pricing-grid">
+                        <div class="pricing-card starter">
+                            <div class="card-header">
+                                <h3>Starter Pack</h3>
+                                <div class="price">
+                                    <span class="currency">$</span>
+                                    <span class="amount">99</span>
+                                </div>
+                                <div class="tokens">
+                                    <span class="token-count">1,000</span>
+                                    <span class="token-label">Tokens</span>
+                                </div>
+                            </div>
+                            <div class="card-features">
+                                <div class="feature-item">
+                                    <span class="check">✓</span>
+                                    <span>Up to 1,000 customer visits</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="check">✓</span>
+                                    <span>Basic analytics dashboard</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="check">✓</span>
+                                    <span>QR code generation</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-card">Get Started</button>
+                        </div>
+                        
+                        <div class="pricing-card business popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="card-header">
+                                <h3>Business Pack</h3>
+                                <div class="price">
+                                    <span class="currency">$</span>
+                                    <span class="amount">299</span>
+                                </div>
+                                <div class="tokens">
+                                    <span class="token-count">3,500</span>
+                                    <span class="token-label">Tokens</span>
+                                </div>
+                            </div>
+                            <div class="card-features">
+                                <div class="feature-item">
+                                    <span class="check">✓</span>
+                                    <span>Up to 3,500 customer visits</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="check">✓</span>
+                                    <span>Advanced analytics & insights</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="check">✓</span>
+                                    <span>Multiple campaign types</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-card btn-primary">Choose Plan</button>
+                        </div>
+                        
+                        <div class="pricing-card enterprise">
+                            <div class="card-header">
+                                <h3>Enterprise Pack</h3>
+                                <div class="price">
+                                    <span class="currency">$</span>
+                                    <span class="amount">799</span>
+                                </div>
+                                <div class="tokens">
+                                    <span class="token-count">10,000</span>
+                                    <span class="token-label">Tokens</span>
+                                </div>
+                            </div>
+                            <div class="card-features">
+                                <div class="feature-item">
+                                    <span class="check">✓</span>
+                                    <span>Up to 10,000 customer visits</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="check">✓</span>
+                                    <span>Premium analytics suite</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="check">✓</span>
+                                    <span>API access & integrations</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-card">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Influencers Content -->
+        <div class="audience-experience" id="influencers-experience">
+            <!-- Features Section for Influencers -->
+            <section class="features-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2 class="section-title">🎥 Features for Influencers</h2>
+                        <p class="section-subtitle">Earn Based on Results—Not Reach</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/money.png" alt="Money" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Earn Per Verified Customer</h3>
+                                <p>The more customers you bring in, the more you earn—no need to negotiate per-post deals.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/content.png" alt="Content" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Create Unlimited Content</h3>
+                                <p>You're free to promote your way—videos, reels, blogs, or stories—maximize reach, maximize payout.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/qr-code.png" alt="QR Code" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>One Link, One Code, Infinite Opportunities</h3>
+                                <p>Get a unique QR code to promote. Every scan is tracked and rewarded.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/star.png" alt="Star" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Work With Brands You Love</h3>
+                                <p>Apply to campaigns that fit your vibe, and get rewarded for real influence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works for Influencers -->
+            <section class="how-it-works-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2 class="section-title">🟢 How It Works</h2>
+                        <p class="section-subtitle">Simple 3-step process for influencers</p>
+                    </div>
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Apply to Campaigns You Like</h3>
+                                <p>Pick campaigns that fit your style and audience.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Promote with a Unique QR Code</h3>
+                                <p>You get a trackable QR code to include in your content.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Earn When Customers Convert</h3>
+                                <p>You earn every time your audience redeems a deal at the business.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Customers Content -->
+        <div class="audience-experience" id="customers-experience">
+            <!-- Features Section for Customers -->
+            <section class="features-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2 class="section-title">👥 Features for Customers</h2>
+                        <p class="section-subtitle">Discover Local Deals & Earn Rewards While Supporting Your Favorite Creators</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/discount.png" alt="Discount" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Get Exclusive Discounts</h3>
+                                <p>Scan influencer QR codes to access special offers and in-store deals.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/loyalty-card.png" alt="Loyalty Card" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Earn Points for Every Visit</h3>
+                                <p>Collect reward points with every QR scan—redeem them for free items, experiences, or app-exclusive perks.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-visual">
+                                <div class="feature-icon">
+                                    <img src="assets/images/star.png" alt="Star" class="feature-icon-img" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Support Creators Directly</h3>
+                                <p>Your participation helps your favorite creators get paid—without costing you extra.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works for Customers -->
+            <section class="how-it-works-section">
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2 class="section-title">🟢 How It Works</h2>
+                        <p class="section-subtitle">Simple 3-step process for customers</p>
+                    </div>
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Discover Deals via Influencers</h3>
+                                <p>Find exclusive QR codes from creators you follow.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Get Rewarded for Shopping</h3>
+                                <p>Show the QR in-store or online to unlock the promotion.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Collect Points with Every Visit</h3>
+                                <p>Earn rewards in the app by scanning influencer codes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Download Section -->
+    <section id="download" class="download-section">
+        <div class="section-container">
+            <div class="download-content">
+                <div class="download-text">
+                    <h2>Get the App</h2>
+                    <p>Join thousands of businesses and influencers already using Collabuu to grow their networks and increase revenue.</p>
+                    
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn app-store">
+                            <svg class="store-icon" viewBox="0 0 24 24" fill="none">
+                                <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.13997 6.91 8.85997 6.88C10.15 6.85 11.36 7.72 12.11 7.72C12.86 7.72 14.28 6.68 15.84 6.84C16.41 6.87 18.05 7.1 19.05 8.82C18.95 8.89 17.06 10.1 17.08 12.4C17.1 15.24 19.56 16.2 19.58 16.21C19.54 16.3 19.12 17.74 18.71 19.5Z" fill="currentColor"/>
+                                <path d="M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
+                            </svg>
+                            <div class="store-text">
+                                <span class="store-line1">Download on the</span>
+                                <span class="store-line2">App Store</span>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="download-btn google-play">
+                            <svg class="store-icon" viewBox="0 0 24 24" fill="none">
+                                <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5Z" fill="currentColor"/>
+                                <path d="M16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12Z" fill="currentColor"/>
+                                <path d="M20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.53 12.9 20.18 13.18L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81Z" fill="currentColor"/>
+                                <path d="M6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z" fill="currentColor"/>
+                            </svg>
+                            <div class="store-text">
+                                <span class="store-line1">Get it on</span>
+                                <span class="store-line2">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M16 4C18.2091 4 20 5.79086 20 8C20 10.2091 18.2091 12 16 12C13.7909 12 12 10.2091 12 8C12 5.79086 13.7909 4 16 4Z" fill="currentColor"/>
+                            <path d="M8 8C10.2091 8 12 9.79086 12 12C12 14.2091 10.2091 16 8 16C5.79086 16 4 14.2091 4 12C4 9.79086 5.79086 8 8 8Z" fill="currentColor"/>
+                            <path d="M16 12C18.2091 12 20 13.7909 20 16C20 18.2091 18.2091 20 16 20C13.7909 20 12 18.2091 12 16C12Z" fill="currentColor"/>
+                        </svg>
+                        <span>Collabuu</span>
+                    </div>
+                    <p>Connect • Collaborate • Grow</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#audience-selector">Features</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>For Users</h4>
+                        <ul>
+                            <li><a href="influencer-agreement.html">Influencers</a></li>
+                            <li><a href="business-agreement.html">Business</a></li>
+                            <li><a href="support.html">Support</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="terms-of-service.html">Terms</a></li>
+                            <li><a href="privacy-policy.html">Privacy</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2024 Collabuu. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/landing-script.js"></script>
+</body>
+</html> 

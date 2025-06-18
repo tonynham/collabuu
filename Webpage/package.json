@@ -1,0 +1,18 @@
+{
+  "name": "calabuu",
+  "version": "1.0.0",
+  "main": "fix_user_profiles.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3"
+  }
+}

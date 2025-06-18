@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Test</title>
+    <style>
+        .main-tab-btn {
+            padding: 20px;
+            margin: 10px;
+            background: lightblue;
+            border: 2px solid blue;
+            cursor: pointer;
+        }
+        .main-tab-btn.active {
+            background: darkblue;
+            color: white;
+        }
+        .dynamic-content {
+            margin-top: 20px;
+            padding: 20px;
+            background: lightgray;
+        }
+        .dynamic-content.hidden {
+            display: none !important;
+        }
+        .audience-experience {
+            display: none;
+            padding: 20px;
+            background: lightyellow;
+        }
+        .audience-experience.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Button Test Page</h1>
+    
+    <div class="main-audience-tabs">
+        <button class="main-tab-btn" data-audience="businesses">
+            <h3>For Businesses</h3>
+        </button>
+        <button class="main-tab-btn" data-audience="influencers">
+            <h3>For Influencers</h3>
+        </button>
+        <button class="main-tab-btn" data-audience="customers">
+            <h3>For Customers</h3>
+        </button>
+    </div>
+
+    <div class="dynamic-content hidden" id="dynamic-content">
+        <div class="audience-experience" id="businesses-experience">
+            <h2>Businesses Content</h2>
+            <p>This is the businesses experience!</p>
+        </div>
+        <div class="audience-experience" id="influencers-experience">
+            <h2>Influencers Content</h2>
+            <p>This is the influencers experience!</p>
+        </div>
+        <div class="audience-experience" id="customers-experience">
+            <h2>Customers Content</h2>
+            <p>This is the customers experience!</p>
+        </div>
+    </div>
+
+    <script>
+        console.log('Test script loaded!');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded for test page');
+            
+            const mainTabButtons = document.querySelectorAll('.main-tab-btn');
+            const audienceExperiences = document.querySelectorAll('.audience-experience');
+            const dynamicContent = document.getElementById('dynamic-content');
+            
+            console.log('Found elements:', {
+                buttons: mainTabButtons.length,
+                experiences: audienceExperiences.length,
+                dynamicContent: !!dynamicContent
+            });
+            
+            mainTabButtons.forEach((button, index) => {
+                console.log(`Setting up button ${index}:`, button.getAttribute('data-audience'));
+                button.addEventListener('click', (e) => {
+                    console.log('=== BUTTON CLICKED ===');
+                    const targetAudience = button.getAttribute('data-audience');
+                    console.log('Audience selected:', targetAudience);
+                    
+                    // Remove active class from all buttons
+                    mainTabButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Remove active class from all experiences
+                    audienceExperiences.forEach(experience => experience.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Find and activate the target experience
+                    const targetExperience = document.getElementById(`${targetAudience}-experience`);
+                    console.log('Target experience:', targetExperience);
+                    if (targetExperience) {
+                        targetExperience.classList.add('active');
+                        console.log('Added active class to experience');
+                    }
+                    
+                    // Show dynamic content
+                    if (dynamicContent && dynamicContent.classList.contains('hidden')) {
+                        dynamicContent.classList.remove('hidden');
+                        console.log('Removed hidden class from dynamic content');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
