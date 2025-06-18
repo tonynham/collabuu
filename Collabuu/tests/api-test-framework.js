@@ -4,7 +4,12 @@ const { createClient } = require('@supabase/supabase-js');
 // Test configuration
 const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3001';
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://eecixpooqqhifvmpcdnp.supabase.co';
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVlY2l4cG9vcXFoaWZ2bXBjZG5wIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzMzNjQ4OSwiZXhwIjoyMDYyOTEyNDg5fQ.Jc70iM3MLimK_pa53_1PMaXEYdMimVnpWLJNMynBUeU';
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
+
+if (!SUPABASE_SERVICE_KEY) {
+  console.error('❌ SUPABASE_SERVICE_KEY environment variable is required for testing');
+  process.exit(1);
+}
 
 // Initialize Supabase client for database verification
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);

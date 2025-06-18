@@ -1,7 +1,12 @@
 const https = require('https');
 
 const SUPABASE_URL = 'https://eecixpooqqhifvmpcdnp.supabase.co';
-const SERVICE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVlY2l4cG9vcXFoaWZ2bXBjZG5wIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzMzNjQ4OSwiZXhwIjoyMDYyOTEyNDg5fQ.Jc70iM3MLimK_pa53_1PMaXEYdMimVnpWLJNMynBUeU';
+const SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
+
+if (!SERVICE_KEY) {
+  console.error('❌ SUPABASE_SERVICE_KEY environment variable is required');
+  process.exit(1);
+}
 
 async function executeSQL(sql) {
   return new Promise((resolve, reject) => {

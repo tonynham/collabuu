@@ -3,8 +3,13 @@ const { createClient } = require('@supabase/supabase-js');
 // Initialize Supabase client with service key for admin operations
 const supabase = createClient(
   process.env.SUPABASE_URL || 'https://eecixpooqqhifvmpcdnp.supabase.co',
-  process.env.SUPABASE_SERVICE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVlY2l4cG9vcXFoaWZ2bXBjZG5wIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NzMzNjQ4OSwiZXhwIjoyMDYyOTEyNDg5fQ.Jc70iM3MLimK_pa53_1PMaXEYdMimVnpWLJNMynBUeU'
+  process.env.SUPABASE_SERVICE_KEY
 );
+
+if (!process.env.SUPABASE_SERVICE_KEY) {
+  console.error('❌ SUPABASE_SERVICE_KEY environment variable is required');
+  process.exit(1);
+}
 
 async function testConnection() {
   console.log('🔗 Testing Supabase connection...');
