@@ -510,10 +510,11 @@ body.scrolled-past-hero {
 
 /* Subtitle */
 .subtitle {
-    margin-bottom: 80px;
-    font-size: 1.5rem;
+    margin-bottom: 60px;
+    font-size: 1.2rem;
     color: var(--text-secondary);
     font-weight: 300;
+    line-height: 1.4;
 }
 
 .subtitle-text:first-child {
@@ -524,20 +525,20 @@ body.scrolled-past-hero {
 .app-store-buttons {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 60px;
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 /* Hero CTA */
 .hero-cta {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .cta-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    margin-bottom: 1rem;
     font-weight: 300;
 }
 
@@ -633,8 +634,8 @@ body.scrolled-past-hero {
 /* Bottom Icon */
 .bottom-icon {
     position: absolute;
-    bottom: -50px;
-    right: 20%;
+    bottom: -30px;
+    right: 10%;
     animation: float 3s ease-in-out infinite 1s;
 }
 
@@ -1595,7 +1596,6 @@ body.scrolled-past-hero {
         display: flex;
     }
     
-    /* Hide desktop navigation */
     .nav-menu {
         display: none;
     }
@@ -1604,36 +1604,31 @@ body.scrolled-past-hero {
         padding: 0 20px;
     }
     
-    /* Improve touch targets for mobile */
+    /* Improve touch targets */
     .main-tab-btn {
-        min-height: 60px;
-        padding: 16px 20px;
-        margin-bottom: 12px;
+        padding: 24px 20px;
+        font-size: 1rem;
     }
     
     .tab-icon {
-        width: 40px;
-        height: 40px;
+        margin-bottom: 8px;
     }
     
     .store-btn {
         width: 60px;
         height: 60px;
-        min-height: 44px; /* Touch target compliance */
     }
     
     .cta-button {
-        padding: 16px 32px;
+        padding: 16px 28px;
         font-size: 1.1rem;
-        min-height: 44px;
     }
     
     .btn-app-store {
-        min-height: 44px;
         padding: 12px 24px;
+        font-size: 1rem;
     }
     
-    /* Improve hero section for mobile */
     .top-icons {
         gap: 40px;
         margin-bottom: 40px;
@@ -1646,9 +1641,9 @@ body.scrolled-past-hero {
     }
     
     .main-title h1 {
-        font-size: clamp(2rem, 5vw, 4rem);
-        line-height: 1.2;
-        margin-bottom: 1rem;
+        font-size: clamp(2.8rem, 8vw, 5rem);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
     }
     
     .title-accent {
@@ -1659,32 +1654,6 @@ body.scrolled-past-hero {
         font-size: 1.2rem;
         margin-bottom: 60px;
         line-height: 1.4;
-    }
-    
-    /* Improve button spacing */
-    .app-store-buttons {
-        gap: 20px;
-        margin-bottom: 40px;
-        justify-content: center;
-    }
-    
-    .hero-cta {
-        margin-bottom: 60px;
-    }
-    
-    .cta-text {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-    }
-    
-    .store-icon {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .bottom-icon {
-        right: 10%;
-        bottom: -30px;
     }
     
     /* Improve grid layouts */
@@ -1792,8 +1761,9 @@ body.scrolled-past-hero {
     }
     
     .main-title h1 {
-        font-size: clamp(1.8rem, 8vw, 3rem);
-        margin-bottom: 0.5rem;
+        font-size: clamp(2.4rem, 10vw, 4rem);
+        margin-bottom: 1rem;
+        line-height: 1.1;
     }
     
     .subtitle {
