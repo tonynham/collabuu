@@ -1,0 +1,38 @@
+{
+  "name": "collabuu-website",
+  "version": "1.0.0",
+  "build": {
+    "command": "echo 'No build required - static site'",
+    "output": "."
+  },
+  "deployment": {
+    "branch": "main",
+    "auto_deploy": true,
+    "build_command": "./deploy.sh",
+    "publish_directory": ".",
+    "environment": "production"
+  },
+  "files": {
+    "include": [
+      "index.html",
+      "assets/**/*",
+      "*.html",
+      ".htaccess",
+      "manifest.json"
+    ],
+    "exclude": [
+      "Webpage/",
+      "Collabuu/",
+      "*.zip",
+      ".git/",
+      "node_modules/"
+    ]
+  },
+  "cache_control": {
+    "*.css": "max-age=31536000",
+    "*.js": "max-age=31536000",
+    "*.png": "max-age=31536000",
+    "*.jpg": "max-age=31536000",
+    "*.svg": "max-age=31536000"
+  }
+} 
