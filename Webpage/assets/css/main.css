@@ -1591,7 +1591,6 @@ body.scrolled-past-hero {
 }
 
 @media (max-width: 768px) {
-    /* Show mobile menu toggle */
     .mobile-menu-toggle {
         display: flex;
     }
@@ -1615,8 +1614,8 @@ body.scrolled-past-hero {
     }
     
     .store-btn {
-        width: 60px;
-        height: 60px;
+        width: 56px;
+        height: 56px;
     }
     
     .cta-button {
@@ -1629,6 +1628,7 @@ body.scrolled-past-hero {
         font-size: 1rem;
     }
     
+    /* Optimize hero icons */
     .top-icons {
         gap: 40px;
         margin-bottom: 40px;
@@ -1637,14 +1637,15 @@ body.scrolled-past-hero {
     .icon-bg {
         width: 60px;
         height: 60px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
+    /* Significantly increase main title size for mobile */
     .main-title h1,
     .main-title h1 span,
     .title-word {
-        font-size: 6rem !important;
-        line-height: 1.0 !important;
+        font-size: clamp(4rem, 12vw, 7rem) !important;
+        line-height: 0.9 !important;
         transform: none !important;
         display: block !important;
     }
@@ -1654,9 +1655,12 @@ body.scrolled-past-hero {
     }
     
     .subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 60px;
+        font-size: 1.3rem;
+        margin-bottom: 50px;
         line-height: 1.4;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     /* Improve grid layouts */
@@ -1773,18 +1777,23 @@ body.scrolled-past-hero {
         font-size: 1.2rem;
     }
     
+    /* Ensure main title is still large on very small screens */
     .main-title h1,
     .main-title h1 span,
     .title-word {
-        font-size: 5rem !important;
-        line-height: 1.0 !important;
+        font-size: clamp(3.5rem, 14vw, 6rem) !important;
+        line-height: 0.85 !important;
         transform: none !important;
         display: block !important;
     }
     
     .subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-bottom: 40px;
+        line-height: 1.4;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .cta-button {
@@ -1856,7 +1865,7 @@ body.scrolled-past-hero {
     .footer-content {
         grid-template-columns: 1fr !important;
         gap: 32px !important;
-        text-align: center;
+    text-align: center;
     }
     
     .footer-links {
@@ -2338,13 +2347,13 @@ body.scrolled-past-hero {
 }
 
 .cta-container {
-    text-align: center;
+        text-align: center;
     margin-top: 60px;
-}
-
+    }
+    
 .btn-free-join {
     display: inline-flex;
-    align-items: center;
+        align-items: center;
     gap: 12px;
     background: linear-gradient(135deg, var(--accent-green-light), var(--accent-blue-light));
     color: white;
@@ -2364,7 +2373,7 @@ body.scrolled-past-hero {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 100%;
+        width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left var(--transition-medium);
