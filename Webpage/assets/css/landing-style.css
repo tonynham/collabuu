@@ -1640,10 +1640,13 @@ body.scrolled-past-hero {
         font-size: 1.5rem;
     }
     
-    .main-title h1 {
-        font-size: clamp(4rem, 14vw, 7rem);
-        line-height: 1.0;
-        margin-bottom: 1.5rem;
+    .main-title h1,
+    .main-title h1 span,
+    .title-word {
+        font-size: 6rem !important;
+        line-height: 1.0 !important;
+        transform: none !important;
+        display: block !important;
     }
     
     .title-accent {
@@ -1760,10 +1763,13 @@ body.scrolled-past-hero {
         font-size: 1.2rem;
     }
     
-    .main-title h1 {
-        font-size: clamp(4rem, 14vw, 7rem);
-        line-height: 1.0;
-        margin-bottom: 1.5rem;
+    .main-title h1,
+    .main-title h1 span,
+    .title-word {
+        font-size: 5rem !important;
+        line-height: 1.0 !important;
+        transform: none !important;
+        display: block !important;
     }
     
     .subtitle {
@@ -2432,4 +2438,29 @@ body.scrolled-past-hero {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-} 
+}
+
+/* FORCE LARGE MOBILE FONT - FINAL OVERRIDE */
+@media (max-width: 768px) {
+    .main-title h1,
+    .main-title h1 span,
+    .title-word {
+        font-size: 6rem !important;
+        line-height: 1.0 !important;
+        transform: none !important;
+        display: block !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title h1,
+    .main-title h1 span,
+    .title-word {
+        font-size: 5rem !important;
+        line-height: 1.0 !important;
+        transform: none !important;
+        display: block !important;
+    }
+}
+
+/* Cache bust Wed Jun 18 15:59:53 MDT 2025 */
