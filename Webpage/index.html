@@ -2,14 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Collabuu - Connect • Collaborate • Grow</title>
     <meta name="description" content="The ultimate platform connecting businesses with influencers through advanced tokenomics and seamless collaboration.">
-    <link rel="stylesheet" href="assets/css/landing-style.css?v=20250617p">
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- Mobile & PWA Optimizations -->
+    <meta name="theme-color" content="#00b366">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Collabuu">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Performance Optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- DNS prefetch for performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.svg">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Fonts with display swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Main stylesheet with cache busting -->
+    <link rel="stylesheet" href="assets/css/landing-style.css?v=20250617p">
 </head>
 <body>
     <!-- Navigation -->
@@ -47,6 +73,13 @@
                     <li class="nav-item-dynamic nav-item-hidden"><a href="#how-it-works" class="nav-link">How It Works</a></li>
                     <li class="nav-item-dynamic nav-item-hidden"><a href="#download" class="nav-link">Get App</a></li>
                 </ul>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </div>
             
             <div class="nav-cta">
@@ -129,7 +162,7 @@
             <div class="main-audience-tabs">
                 <button class="main-tab-btn" data-audience="businesses">
                     <div class="tab-icon">
-                        <img src="assets/images/business-icon.png" alt="Business" class="tab-icon-img">
+                        <img src="assets/images/business-icon.png" alt="Business" class="tab-icon-img" loading="lazy">
                     </div>
                     <div class="tab-content">
                         <h3>For Businesses</h3>
@@ -138,7 +171,7 @@
                 </button>
                 <button class="main-tab-btn" data-audience="influencers">
                     <div class="tab-icon">
-                        <img src="assets/images/influencer-icon.png" alt="Influencer" class="tab-icon-img">
+                        <img src="assets/images/influencer-icon.png" alt="Influencer" class="tab-icon-img" loading="lazy">
                     </div>
                     <div class="tab-content">
                         <h3>For Influencers</h3>
@@ -147,7 +180,7 @@
                 </button>
                 <button class="main-tab-btn" data-audience="customers">
                     <div class="tab-icon">
-                        <img src="assets/images/customer-icon.png" alt="Customer" class="tab-icon-img">
+                        <img src="assets/images/customer-icon.png" alt="Customer" class="tab-icon-img" loading="lazy">
                     </div>
                     <div class="tab-content">
                         <h3>For Customers</h3>
@@ -173,7 +206,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/checkbox.png" alt="Checkbox" class="feature-icon-img">
+                                    <img src="assets/images/checkbox.png" alt="Checkbox" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -185,7 +218,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/rocket.png" alt="Rocket" class="feature-icon-img">
+                                    <img src="assets/images/rocket.png" alt="Rocket" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -197,7 +230,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/data-analytics.png" alt="Data Analytics" class="feature-icon-img">
+                                    <img src="assets/images/data-analytics.png" alt="Data Analytics" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -209,7 +242,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/money.png" alt="Money" class="feature-icon-img">
+                                    <img src="assets/images/money.png" alt="Money" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -424,7 +457,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/money-bag.png" alt="Money Bag" class="feature-icon-img">
+                                    <img src="assets/images/money-bag.png" alt="Money Bag" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -436,7 +469,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/content.png" alt="Content" class="feature-icon-img">
+                                    <img src="assets/images/content.png" alt="Content" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -448,7 +481,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/qr-code.png" alt="QR Code" class="feature-icon-img">
+                                    <img src="assets/images/qr-code.png" alt="QR Code" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -460,7 +493,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/star.png" alt="Star" class="feature-icon-img">
+                                    <img src="assets/images/star.png" alt="Star" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -518,7 +551,7 @@
                     <div class="free-benefits-grid">
                         <div class="benefit-card">
                             <div class="benefit-icon">
-                                <img src="assets/images/free.png" alt="Free" class="benefit-icon-img">
+                                <img src="assets/images/free.png" alt="Free" class="benefit-icon-img" loading="lazy">
                             </div>
                             <div class="benefit-content">
                                 <h3>Free Forever</h3>
@@ -528,7 +561,7 @@
                         
                         <div class="benefit-card">
                             <div class="benefit-icon">
-                                <img src="assets/images/savings.png" alt="Savings" class="benefit-icon-img">
+                                <img src="assets/images/savings.png" alt="Savings" class="benefit-icon-img" loading="lazy">
                             </div>
                             <div class="benefit-content">
                                 <h3>No Platform Fees</h3>
@@ -538,7 +571,7 @@
                         
                         <div class="benefit-card">
                             <div class="benefit-icon">
-                                <img src="assets/images/electricity.png" alt="Electricity" class="benefit-icon-img">
+                                <img src="assets/images/electricity.png" alt="Electricity" class="benefit-icon-img" loading="lazy">
                             </div>
                             <div class="benefit-content">
                                 <h3>Instant Payouts</h3>
@@ -572,7 +605,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/discount.png" alt="Discount" class="feature-icon-img">
+                                    <img src="assets/images/discount.png" alt="Discount" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -584,7 +617,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/loyalty-card.png" alt="Loyalty Card" class="feature-icon-img">
+                                    <img src="assets/images/loyalty-card.png" alt="Loyalty Card" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -596,7 +629,7 @@
                         <div class="feature-card">
                             <div class="feature-visual">
                                 <div class="feature-icon">
-                                    <img src="assets/images/star.png" alt="Star" class="feature-icon-img">
+                                    <img src="assets/images/star.png" alt="Star" class="feature-icon-img" loading="lazy">
                                 </div>
                             </div>
                             <div class="feature-content">
@@ -654,7 +687,7 @@
                     <div class="free-benefits-grid">
                         <div class="benefit-card">
                             <div class="benefit-icon">
-                                <img src="assets/images/customer-free.png" alt="Customer Free" class="benefit-icon-img">
+                                <img src="assets/images/customer-free.png" alt="Customer Free" class="benefit-icon-img" loading="lazy">
                             </div>
                             <div class="benefit-content">
                                 <h3>Free App & Rewards</h3>
@@ -664,7 +697,7 @@
                         
                         <div class="benefit-card">
                             <div class="benefit-icon">
-                                <img src="assets/images/customer-icon.png" alt="Customer Icon" class="benefit-icon-img">
+                                <img src="assets/images/customer-icon.png" alt="Customer Icon" class="benefit-icon-img" loading="lazy">
                             </div>
                             <div class="benefit-content">
                                 <h3>Save Money on Every Visit</h3>
@@ -674,7 +707,7 @@
                         
                         <div class="benefit-card">
                             <div class="benefit-icon">
-                                <img src="assets/images/fist.png" alt="Fist" class="benefit-icon-img">
+                                <img src="assets/images/fist.png" alt="Fist" class="benefit-icon-img" loading="lazy">
                             </div>
                             <div class="benefit-content">
                                 <h3>Support Your Favorite Creators</h3>

@@ -4,6 +4,12 @@ console.log('Landing script loaded successfully!');
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing landing script...');
     
+    // Initialize lazy loading for images
+    initializeLazyLoading();
+    
+    // Mobile-specific optimizations
+    initializeMobileOptimizations();
+    
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     const heroSection = document.querySelector('.hero-landing');
@@ -18,6 +24,58 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get navigation elements
     const navDynamicItems = document.querySelectorAll('.nav-item-dynamic');
     const navAppStore = document.getElementById('nav-app-store');
+    
+    // Mobile menu functionality
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+    let isMobileMenuOpen = false;
+
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            isMobileMenuOpen = !isMobileMenuOpen;
+            
+            if (isMobileMenuOpen) {
+                navMenu.classList.add('mobile-menu-open');
+                mobileMenuToggle.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            } else {
+                navMenu.classList.remove('mobile-menu-open');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close mobile menu when clicking on nav links
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('mobile-menu-open');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+                isMobileMenuOpen = false;
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (isMobileMenuOpen && !navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                navMenu.classList.remove('mobile-menu-open');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+                isMobileMenuOpen = false;
+            }
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMobileMenuOpen) {
+                navMenu.classList.remove('mobile-menu-open');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+                isMobileMenuOpen = false;
+            }
+        });
+    }
     
     // Track if user has made a selection
     let hasSelectedAudience = false;
@@ -220,4 +278,99 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
-}); 
+});
+
+// Lazy Loading Implementation
+function initializeLazyLoading() {
+    // Use Intersection Observer for lazy loading if supported
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.src; // Trigger actual loading
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
+
+        // Observe all lazy images
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+}
+
+// Mobile-specific optimizations
+function initializeMobileOptimizations() {
+    // Prevent zoom on input focus for iOS
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        const viewportMeta = document.querySelector('meta[name="viewport"]');
+        if (viewportMeta) {
+            const originalContent = viewportMeta.content;
+            
+            // Add event listeners to prevent zoom on focus
+            document.addEventListener('focusin', () => {
+                viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+            });
+            
+            document.addEventListener('focusout', () => {
+                viewportMeta.content = originalContent;
+            });
+        }
+    }
+    
+    // Optimize touch events for better performance
+    document.addEventListener('touchstart', function() {}, { passive: true });
+    document.addEventListener('touchmove', function() {}, { passive: true });
+    
+    // Add mobile-specific class for styling
+    if (window.innerWidth <= 768) {
+        document.body.classList.add('mobile-device');
+    }
+    
+    // Handle orientation changes
+    window.addEventListener('orientationchange', () => {
+        // Delay to ensure proper rendering after orientation change
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+            // Recalculate any dynamic heights if needed
+            const heroSection = document.querySelector('.hero-landing');
+            if (heroSection) {
+                heroSection.style.minHeight = window.innerHeight + 'px';
+            }
+        }, 100);
+    });
+    
+    // Improve scrolling performance on mobile
+    let ticking = false;
+    
+    function updateOnScroll() {
+        // Throttle scroll events for better performance
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                // Add any scroll-based animations here
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', updateOnScroll, { passive: true });
+    
+    // Preload critical images for better mobile experience
+    const criticalImages = [
+        'assets/images/business-icon.png',
+        'assets/images/influencer-icon.png',
+        'assets/images/customer-icon.png'
+    ];
+    
+    criticalImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+} 
