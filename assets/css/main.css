@@ -1665,8 +1665,30 @@ body.scrolled-past-hero {
     
     /* Improve grid layouts */
     .features-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding: 0 20px 20px 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .features-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .features-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .feature-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        min-height: auto;
     }
     
     .pricing-grid {
@@ -1705,11 +1727,11 @@ body.scrolled-past-hero {
     .download-section,
     .free-join-section,
     .audience-selector-section {
-        padding: 80px 0 !important;
+        padding: 60px 0 !important;
     }
 
     .section-header {
-        margin-bottom: 40px;
+        margin-bottom: 30px !important;
     }
 
     .section-title {
@@ -2491,3 +2513,217 @@ body.scrolled-past-hero {
 }
 
 /* Cache bust Wed Jun 18 15:59:53 MDT 2025 */
+
+/* Mobile Carousel Styles for Features, How It Works, and Pricing */
+@media (max-width: 768px) {
+    /* Improve section spacing on mobile */
+    .features-section,
+    .how-it-works-section,
+    .tokenomics-section,
+    .download-section,
+    .free-join-section,
+    .audience-selector-section {
+        padding: 60px 0 !important;
+    }
+    
+    .section-header {
+        margin-bottom: 30px !important;
+    }
+    
+    /* Features Grid Mobile Carousel */
+    .features-grid {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding: 0 20px 30px 20px;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 20px;
+    }
+    
+    .features-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .features-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .feature-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        min-height: auto;
+    }
+    
+    /* Steps Container Mobile Carousel */
+    .steps-container {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding: 0 20px 30px 20px;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 20px;
+    }
+    
+    .steps-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .steps-container {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .step-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+    
+    /* Pricing Grid Mobile Carousel */
+    .pricing-grid {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding: 0 20px 30px 20px;
+        -webkit-overflow-scrolling: touch;
+        max-width: none;
+        margin: 0 0 20px 0;
+    }
+    
+    .pricing-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .pricing-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .pricing-card {
+        flex: 0 0 300px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        min-height: auto;
+        position: relative;
+        padding-top: 50px;
+    }
+    
+    /* Fix popular badge positioning on mobile */
+    .pricing-card.popular .popular-badge {
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--accent-green-light);
+        color: white;
+        padding: 6px 16px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        white-space: nowrap;
+        z-index: 10;
+    }
+    
+    /* Carousel Navigation Indicators */
+    .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--border-light);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .carousel-dot.active {
+        background: var(--accent-green-light);
+        transform: scale(1.2);
+    }
+    
+    /* Swipe hint animation */
+    .carousel-hint {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .carousel-hint::after {
+        content: "← Swipe to explore →";
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        color: var(--text-light-secondary);
+        opacity: 0.7;
+        animation: fadeInOut 3s infinite;
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.7; }
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce section spacing on small screens */
+    .features-section,
+    .how-it-works-section,
+    .tokenomics-section,
+    .download-section,
+    .free-join-section,
+    .audience-selector-section {
+        padding: 50px 0 !important;
+    }
+    
+    .section-header {
+        margin-bottom: 25px !important;
+    }
+    
+    .feature-card,
+    .step-card {
+        flex: 0 0 260px;
+    }
+    
+    .pricing-card {
+        flex: 0 0 280px;
+        padding-top: 45px;
+    }
+    
+    .pricing-card.popular .popular-badge {
+        top: 12px;
+        padding: 5px 14px;
+        font-size: 0.75rem;
+    }
+    
+    .features-grid,
+    .steps-container,
+    .pricing-grid {
+        padding: 0 16px 25px 16px;
+        gap: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-indicators {
+        margin-top: 8px;
+        margin-bottom: 25px;
+    }
+}
