@@ -1645,7 +1645,7 @@ body.scrolled-past-hero {
     .main-title h1,
     .main-title h1 span,
     .title-word {
-        font-size: clamp(4rem, 12vw, 7rem) !important;
+        font-size: clamp(5rem, 15vw, 8rem) !important;
         line-height: 0.9 !important;
         transform: none !important;
         display: block !important;
@@ -1782,7 +1782,7 @@ body.scrolled-past-hero {
     .main-title h1,
     .main-title h1 span,
     .title-word {
-        font-size: clamp(3.5rem, 14vw, 6rem) !important;
+        font-size: clamp(4.5rem, 18vw, 7rem) !important;
         line-height: 0.85 !important;
         transform: none !important;
         display: block !important;
@@ -2466,29 +2466,6 @@ body.scrolled-past-hero {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-}
-
-/* FORCE LARGE MOBILE FONT - FINAL OVERRIDE */
-@media (max-width: 768px) {
-    .main-title h1,
-    .main-title h1 span,
-    .title-word {
-        font-size: 6rem !important;
-        line-height: 1.0 !important;
-        transform: none !important;
-        display: block !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-title h1,
-    .main-title h1 span,
-    .title-word {
-        font-size: 5rem !important;
-        line-height: 1.0 !important;
-        transform: none !important;
-        display: block !important;
-    }
 }
 
 /* Cache bust Wed Jun 18 15:59:53 MDT 2025 */
