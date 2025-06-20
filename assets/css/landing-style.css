@@ -149,6 +149,14 @@ body.scrolled-past-hero {
     padding: 8px;
     z-index: 1001;
     transition: all var(--transition-fast);
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Prevent clicks when hidden */
+}
+
+/* Show mobile menu after audience selection */
+.mobile-menu-toggle.show-after-selection {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .hamburger-line {
@@ -306,7 +314,7 @@ body.scrolled-past-hero {
     box-shadow: var(--glow-green);
 }
 
-/* Hero Landing Section - Keep Dark Theme */
+/* Hero Landing Section - Better mobile optimization */
 .hero-landing {
     min-height: 100vh;
     display: flex;
@@ -315,6 +323,7 @@ body.scrolled-past-hero {
     position: relative;
     overflow: hidden;
     background: var(--bg-primary);
+    padding-top: 80px; /* Account for fixed navbar */
 }
 
 .geometric-background {
@@ -1553,100 +1562,71 @@ body.scrolled-past-hero {
     }
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .nav-container,
-    .hero-container,
-    .section-container {
-        padding: 0 20px;
-    }
-    
-    .main-title h1 {
-        font-size: clamp(2.5rem, 6vw, 6rem);
-    }
-    
-    .title-accent {
-        right: -40px;
-    }
-    
-    .accent-dot {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .download-content {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr !important;
-        gap: 40px !important;
-    }
-    
-    .footer-links {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 32px !important;
-    }
-}
-
+/* Mobile optimizations for better spacing and typography */
 @media (max-width: 768px) {
-    /* Show mobile menu toggle */
     .mobile-menu-toggle {
         display: flex;
     }
-    
+
     .nav-menu {
         display: none;
     }
-    
+
     .nav-container {
         padding: 0 20px;
     }
-    
-    /* Improve touch targets */
+
     .main-tab-btn {
-        padding: 24px 20px;
-        font-size: 1rem;
+        padding: 16px 12px;
+        font-size: 0.9rem;
     }
-    
+
     .tab-icon {
         margin-bottom: 8px;
     }
-    
+
     .store-btn {
-        width: 56px;
-        height: 56px;
+        width: 50px;
+        height: 50px;
     }
-    
+
     .cta-button {
-        padding: 16px 28px;
-        font-size: 1.1rem;
-    }
-    
-    .btn-app-store {
         padding: 12px 24px;
         font-size: 1rem;
     }
-    
-    /* Optimize hero icons */
+
+    .btn-app-store {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    /* Better mobile hero layout */
+    .hero-landing {
+        padding-top: 100px; /* More space from navbar */
+        padding-bottom: 40px;
+    }
+
     .top-icons {
         gap: 40px;
         margin-bottom: 40px;
     }
-    
+
     .icon-bg {
         width: 60px;
         height: 60px;
         font-size: 1.4rem;
     }
     
-    /* Significantly increase main title size for mobile */
+    /* Optimized main title for mobile - smaller but still impactful */
+    .main-title {
+        margin-bottom: 30px;
+    }
+    
     .main-title h1,
     .main-title h1 span,
     .title-word {
-        font-size: clamp(5rem, 15vw, 8rem) !important;
-        line-height: 0.9 !important;
+        font-size: clamp(3.5rem, 12vw, 5.5rem) !important;
+        line-height: 0.95 !important;
         transform: none !important;
         display: block !important;
     }
@@ -1656,14 +1636,23 @@ body.scrolled-past-hero {
     }
     
     .subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 50px;
+        font-size: 1.1rem;
+        margin-bottom: 40px;
         line-height: 1.4;
         max-width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
+    /* Better spacing for hero CTA */
+    .hero-cta {
+        margin-bottom: 40px;
+    }
+
+    .app-store-buttons {
+        margin-bottom: 30px;
+    }
+
     /* Improve grid layouts */
     .features-grid {
         display: flex;
@@ -1770,8 +1759,8 @@ body.scrolled-past-hero {
     }
     
     .btn-app-store {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 8px 16px;
+        font-size: 0.8rem;
     }
     
     /* Further improve touch targets for small screens */
@@ -1789,6 +1778,11 @@ body.scrolled-past-hero {
     }
     
     /* Optimize hero for very small screens */
+    .hero-landing {
+        padding-top: 90px;
+        padding-bottom: 30px;
+    }
+    
     .top-icons {
         gap: 30px;
         margin-bottom: 30px;
@@ -1800,19 +1794,23 @@ body.scrolled-past-hero {
         font-size: 1.2rem;
     }
     
-    /* Ensure main title is still large on very small screens */
+    /* Perfect mobile title sizing */
+    .main-title {
+        margin-bottom: 25px;
+    }
+    
     .main-title h1,
     .main-title h1 span,
     .title-word {
-        font-size: clamp(4.5rem, 18vw, 7rem) !important;
-        line-height: 0.85 !important;
+        font-size: clamp(3rem, 11vw, 4.5rem) !important;
+        line-height: 0.9 !important;
         transform: none !important;
         display: block !important;
     }
     
     .subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 40px;
+        font-size: 1rem;
+        margin-bottom: 35px;
         line-height: 1.4;
         max-width: 95%;
         margin-left: auto;
@@ -1820,12 +1818,12 @@ body.scrolled-past-hero {
     }
     
     .cta-button {
-        padding: 14px 24px;
-        font-size: 1rem;
+        padding: 12px 20px;
+        font-size: 0.95rem;
     }
     
     .cta-text {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .store-btn {
@@ -1837,18 +1835,17 @@ body.scrolled-past-hero {
         width: 24px;
         height: 24px;
     }
-    
-    /* Reduce geometric effects for performance */
+
+    /* Reduce geometric effects for performance on mobile */
     .geometric-shape {
         opacity: 0.3;
     }
     
-    /* Improve feature cards */
+    /* Mobile card optimizations */
     .feature-card {
         padding: 24px 20px;
     }
     
-    /* Reduce spacing between icons and text on mobile */
     .feature-visual {
         height: 80px !important;
         margin-bottom: 16px !important;
@@ -1866,7 +1863,6 @@ body.scrolled-past-hero {
         margin: 0 auto 16px auto !important;
     }
     
-    /* Reduce step card spacing */
     .step-number {
         width: 60px !important;
         height: 60px !important;
@@ -1884,7 +1880,6 @@ body.scrolled-past-hero {
         line-height: 1.4;
     }
     
-    /* Improve footer */
     .footer-content {
         grid-template-columns: 1fr !important;
         gap: 32px !important;
@@ -2703,5 +2698,42 @@ body.scrolled-past-hero {
     .carousel-indicators {
         margin-top: 8px;
         margin-bottom: 25px;
+    }
+}
+
+/* Tablet optimization - between desktop and mobile */
+@media (max-width: 1024px) {
+    .nav-container,
+    .hero-container,
+    .section-container {
+        padding: 0 20px;
+    }
+    
+    .main-title h1 {
+        font-size: clamp(2.5rem, 6vw, 6rem);
+    }
+    
+    .title-accent {
+        right: -40px;
+    }
+    
+    .accent-dot {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .download-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 32px !important;
     }
 }

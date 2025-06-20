@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile-specific optimizations
     initializeMobileOptimizations();
     
+    // Initialize mobile carousels
+    initializeMobileCarousels();
+    
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     const heroSection = document.querySelector('.hero-landing');
@@ -176,6 +179,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Mark that user has selected an audience and show navigation
             hasSelectedAudience = true;
             showNavigationItems();
+            
+            // Show mobile menu toggle after audience selection
+            if (mobileMenuToggle) {
+                mobileMenuToggle.classList.add('show-after-selection');
+            }
             
             // Smooth scroll to the first section of their experience (immediate, like "Choose Your Path")
             const firstSection = targetExperience?.querySelector('.features-section');
@@ -373,4 +381,181 @@ function initializeMobileOptimizations() {
         const img = new Image();
         img.src = src;
     });
+}
+
+// Mobile Carousel Implementation
+function initializeMobileCarousels() {
+    console.log('Initializing mobile carousels...');
+    
+    // Only initialize on mobile devices
+    if (window.innerWidth <= 768) {
+        initializeCarousel('.features-grid', '.feature-card');
+        initializeCarousel('.steps-container', '.step-card');
+        initializeCarousel('.pricing-grid', '.pricing-card');
+    }
+    
+    // Re-initialize on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 768) {
+            initializeCarousel('.features-grid', '.feature-card');
+            initializeCarousel('.steps-container', '.step-card');
+            initializeCarousel('.pricing-grid', '.pricing-card');
+        }
+    });
+}
+
+function initializeCarousel(containerSelector, itemSelector) {
+    const containers = document.querySelectorAll(containerSelector);
+    
+    containers.forEach((container, containerIndex) => {
+        const items = container.querySelectorAll(itemSelector);
+        if (items.length <= 1) return; // No need for carousel with 1 or fewer items
+        
+        // Add carousel hint class
+        container.parentElement.classList.add('carousel-hint');
+        
+        // Create and add indicators
+        const indicatorsContainer = createCarouselIndicators(items.length, `${containerSelector.replace('.', '')}-${containerIndex}`);
+        container.parentElement.appendChild(indicatorsContainer);
+        
+        // Set up scroll event listener for indicator updates
+        let scrollTimeout;
+        container.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                updateCarouselIndicators(container, items, indicatorsContainer);
+            }, 100);
+        });
+        
+        // Set up indicator click handlers
+        const indicators = indicatorsContainer.querySelectorAll('.carousel-dot');
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                scrollToItem(container, items[index]);
+            });
+        });
+        
+        // Enhanced touch/swipe handling
+        let startX = 0;
+        let scrollLeft = 0;
+        let isDown = false;
+        let hasMoved = false;
+        
+        container.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+            isDown = true;
+            hasMoved = false;
+            container.style.scrollBehavior = 'auto';
+        }, { passive: true });
+        
+        container.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            hasMoved = true;
+            const x = e.touches[0].pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+        }, { passive: true });
+        
+        container.addEventListener('touchend', () => {
+            isDown = false;
+            container.style.scrollBehavior = 'smooth';
+            
+            // Snap to nearest item if user swiped significantly
+            if (hasMoved) {
+                snapToNearestItem(container, items);
+            }
+        });
+        
+        // Mouse support for desktop testing
+        container.addEventListener('mousedown', (e) => {
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+            isDown = true;
+            hasMoved = false;
+            container.style.cursor = 'grabbing';
+            container.style.scrollBehavior = 'auto';
+        });
+        
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            hasMoved = true;
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeft - walk;
+        });
+        
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+            container.style.scrollBehavior = 'smooth';
+            
+            if (hasMoved) {
+                snapToNearestItem(container, items);
+            }
+        });
+        
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+            container.style.scrollBehavior = 'smooth';
+        });
+        
+        // Initial indicator update
+        updateCarouselIndicators(container, items, indicatorsContainer);
+    });
+}
+
+function createCarouselIndicators(count, id) {
+    const indicatorsContainer = document.createElement('div');
+    indicatorsContainer.className = 'carousel-indicators';
+    indicatorsContainer.id = `indicators-${id}`;
+    
+    for (let i = 0; i < count; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'carousel-dot';
+        if (i === 0) dot.classList.add('active');
+        indicatorsContainer.appendChild(dot);
+    }
+    
+    return indicatorsContainer;
+}
+
+function updateCarouselIndicators(container, items, indicatorsContainer) {
+    const containerWidth = container.offsetWidth;
+    const scrollLeft = container.scrollLeft;
+    const itemWidth = items[0].offsetWidth + 20; // Including gap
+    
+    // Calculate which item is most visible
+    const activeIndex = Math.round(scrollLeft / itemWidth);
+    const clampedIndex = Math.max(0, Math.min(activeIndex, items.length - 1));
+    
+    // Update indicators
+    const indicators = indicatorsContainer.querySelectorAll('.carousel-dot');
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === clampedIndex);
+    });
+}
+
+function scrollToItem(container, item) {
+    const containerRect = container.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    const scrollLeft = item.offsetLeft - container.offsetLeft - (containerRect.width - itemRect.width) / 2;
+    
+    container.scrollTo({
+        left: Math.max(0, scrollLeft),
+        behavior: 'smooth'
+    });
+}
+
+function snapToNearestItem(container, items) {
+    const containerWidth = container.offsetWidth;
+    const scrollLeft = container.scrollLeft;
+    const itemWidth = items[0].offsetWidth + 20; // Including gap
+    
+    const targetIndex = Math.round(scrollLeft / itemWidth);
+    const clampedIndex = Math.max(0, Math.min(targetIndex, items.length - 1));
+    
+    scrollToItem(container, items[clampedIndex]);
 } 
