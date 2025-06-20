@@ -324,6 +324,7 @@ body.scrolled-past-hero {
     overflow: hidden;
     background: var(--bg-primary);
     padding-top: 80px; /* Account for fixed navbar */
+    box-sizing: border-box;
 }
 
 .geometric-background {
@@ -404,11 +405,19 @@ body.scrolled-past-hero {
     padding: 0 40px;
     position: relative;
     z-index: 2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px); /* Account for navbar height */
 }
 
 .hero-content {
     text-align: center;
     position: relative;
+    width: 100%;
+    max-width: 900px; /* Constrain width for better centering */
+    margin: 0 auto;
 }
 
 /* Top Icons */
@@ -469,16 +478,19 @@ body.scrolled-past-hero {
 .main-title {
     margin-bottom: 40px;
     position: relative;
+    text-align: center; /* Ensure center alignment */
 }
 
 .main-title h1 {
     font-size: clamp(3rem, 8vw, 8rem);
     font-weight: 900;
     line-height: 0.9;
-    margin: 0;
+    margin: 0 auto; /* Center the title */
     display: flex;
     flex-direction: column;
     gap: 0;
+    align-items: center; /* Center align the flex items */
+    text-align: center; /* Ensure text is centered */
 }
 
 .title-word {
@@ -2735,5 +2747,22 @@ body.scrolled-past-hero {
     .footer-links {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 32px !important;
+    }
+}
+
+/* Desktop-specific hero centering optimization */
+@media (min-width: 1025px) {
+    .hero-landing {
+        padding-top: 0; /* Remove top padding on desktop for perfect centering */
+        padding-bottom: 0;
+    }
+    
+    .hero-container {
+        min-height: 100vh; /* Full viewport height on desktop */
+        padding: 80px 40px 0; /* Move navbar offset to container padding */
+    }
+    
+    .hero-content {
+        transform: translateY(-40px); /* Slight upward adjustment for visual centering */
     }
 }
