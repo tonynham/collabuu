@@ -12,29 +12,44 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
+        <div class="nav-container">
             <div class="nav-brand">
-                <a href="index.html" class="logo">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                        <path d="M16 4C18.2091 4 20 5.79086 20 8C20 10.2091 18.2091 12 16 12C13.7909 12 12 10.2091 12 8C12 5.79086 13.7909 4 16 4Z" fill="currentColor"/>
-                        <path d="M8 8C10.2091 8 12 9.79086 12 12C12 14.2091 10.2091 16 8 16C5.79086 16 4 14.2091 4 12C4 9.79086 5.79086 8 8 8Z" fill="currentColor"/>
-                        <path d="M16 12C18.2091 12 20 13.7909 20 16C20 18.2091 18.2091 20 16 20C13.7909 20 12 18.2091 12 16C12Z" fill="currentColor"/>
+                <a href="index.html" class="logo-wrapper">
+                    <svg class="logo-icon" width="32" height="32" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="30" r="12" fill="url(#gradient1)"/>
+                        <circle cx="30" cy="60" r="12" fill="url(#gradient2)"/>
+                        <circle cx="70" cy="60" r="12" fill="url(#gradient3)"/>
+                        <path d="M42 42L58 58M58 42L42 58" stroke="#00ff88" stroke-width="3"/>
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00ff88"/>
+                                <stop offset="100%" style="stop-color:#00d4ff"/>
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                <stop offset="100%" style="stop-color:#a855f7"/>
+                            </linearGradient>
+                            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff"/>
+                                <stop offset="100%" style="stop-color:#0099ff"/>
+                            </linearGradient>
+                        </defs>
                     </svg>
-                    <span>Collabuu</span>
+                    <span class="logo-text">Collabuu</span>
                 </a>
             </div>
             
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="support.html">Support</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="support.html" class="nav-link">Support</a></li>
                 </ul>
             </div>
             
-            <div class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="mobile-menu-toggle" id="nav-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </div>
         </div>
     </nav>
@@ -295,8 +310,7 @@
                     <div class="footer-section">
                         <h4>Product</h4>
                         <ul>
-                            <li><a href="full-site.html#features">Features</a></li>
-                            <li><a href="full-site.html#tokenomics">Tokenomics</a></li>
+                            <li><a href="index.html#audience-selector">Features</a></li>
                             <li><a href="faq.html">FAQ</a></li>
                         </ul>
                     </div>
@@ -315,15 +329,7 @@
                         <ul>
                             <li><a href="terms-of-service.html">Terms</a></li>
                             <li><a href="privacy-policy.html">Privacy</a></li>
-                            <li><a href="casl-compliance.html">CASL Compliance</a></li>
                             <li><a href="cookie-policy.html">Cookie Policy</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Contact Us</h4>
-                        <ul>
-                            <li><a href="support.html">Chat with us</a></li>
                         </ul>
                     </div>
                 </div>

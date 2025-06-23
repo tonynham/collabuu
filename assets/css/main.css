@@ -2727,3 +2727,344 @@ body.scrolled-past-hero {
         margin-bottom: 25px;
     }
 }
+
+/* Support Page Styles */
+.support-content {
+    padding-top: 80px;
+    min-height: 100vh;
+    background-color: var(--bg-light-primary);
+    color: var(--text-light-primary);
+}
+
+.support-header {
+    text-align: center;
+    padding: 60px 0 40px;
+    background: linear-gradient(135deg, var(--accent-green-light), var(--accent-blue-light));
+    color: white;
+    margin-bottom: 60px;
+}
+
+.support-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.support-header p {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.contact-form-section {
+    padding: 0 0 60px;
+    background-color: var(--bg-light-primary);
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+}
+
+.form-container h2 {
+    color: var(--text-light-primary);
+    margin-bottom: 8px;
+    font-size: 1.75rem;
+}
+
+.form-container p {
+    color: var(--text-light-secondary);
+    margin-bottom: 32px;
+}
+
+.support-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: var(--text-light-primary);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    background: white;
+    color: var(--text-light-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-green-light);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: var(--accent-green-light);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: var(--accent-green);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--accent-green-light);
+    border: 2px solid var(--accent-green-light);
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--accent-green-light);
+    color: white;
+}
+
+.support-resources {
+    padding: 60px 0;
+    background-color: var(--bg-light-secondary);
+}
+
+.support-resources h2 {
+    text-align: center;
+    color: var(--text-light-primary);
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.resource-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+}
+
+.resource-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.resource-card h3 {
+    color: var(--text-light-primary);
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.resource-card p {
+    color: var(--text-light-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.status-section {
+    padding: 60px 0;
+    background-color: var(--bg-light-primary);
+}
+
+.status-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.status-container h2 {
+    color: var(--text-light-primary);
+    margin-bottom: 24px;
+    font-size: 1.75rem;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+}
+
+.status-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.status-icon.online {
+    background: #10b981;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.status-info {
+    text-align: left;
+}
+
+.status-info h3 {
+    color: var(--text-light-primary);
+    margin-bottom: 4px;
+    font-size: 1.125rem;
+}
+
+.status-info p {
+    color: var(--text-light-secondary);
+    margin: 0;
+}
+
+/* Fix navbar styling for non-homepage pages */
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-light-primary);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.navbar .logo svg {
+    color: var(--accent-green-light);
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links a {
+    color: var(--text-light-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--accent-green-light);
+}
+
+/* Mobile responsive for support page */
+@media (max-width: 768px) {
+    .support-header {
+        padding: 40px 20px 30px;
+    }
+    
+    .support-header h1 {
+        font-size: 2rem;
+    }
+    
+    .form-container {
+        margin: 0 20px;
+        padding: 24px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+    
+    .status-indicator {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .status-info {
+        text-align: center;
+    }
+    
+    .navbar .container {
+        padding: 0 20px;
+    }
+}
