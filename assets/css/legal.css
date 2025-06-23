@@ -1,5 +1,18 @@
 /* Legal Pages Specific Styles */
 
+/* CSS Variables for legal pages */
+:root {
+    --background-primary: #ffffff;
+    --background-secondary: #f8f9fa;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a5568;
+    --text-tertiary: #718096;
+    --primary-color: #00b366;
+    --border-color: #e2e8f0;
+    --radius-small: 8px;
+    --radius-medium: 12px;
+}
+
 .legal-content {
     padding-top: 80px;
     min-height: 100vh;
@@ -181,40 +194,53 @@
     text-decoration: none;
 }
 
-/* Highlight boxes for important information */
+/* Highlight boxes for important information - Fixed styling */
 .legal-highlight {
-    background-color: #FEF3C7;
-    border: 1px solid #F59E0B;
+    background-color: #f0f9ff;
+    border: 2px solid var(--primary-color);
     border-radius: var(--radius-small);
-    padding: 20px;
+    padding: 24px;
     margin: 24px 0;
 }
 
 .legal-highlight.warning {
-    background-color: #FEE2E2;
-    border-color: #EF4444;
+    background-color: #fef2f2;
+    border-color: #ef4444;
 }
 
 .legal-highlight.info {
-    background-color: #EFF6FF;
+    background-color: #f0f9ff;
     border-color: var(--primary-color);
 }
 
 .legal-highlight.success {
-    background-color: #ECFDF5;
-    border-color: var(--success-color);
+    background-color: #f0fdf4;
+    border-color: #10b981;
 }
 
 .legal-highlight p {
-    margin-bottom: 0;
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
+    margin-bottom: 12px;
     font-weight: 500;
 }
 
 .legal-highlight h4 {
-    color: var(--text-primary);
-    margin-bottom: 12px;
+    color: var(--text-primary) !important;
+    margin-bottom: 16px;
     font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.legal-highlight ul {
+    margin: 12px 0;
+    padding-left: 20px;
+}
+
+.legal-highlight li {
+    color: var(--text-primary) !important;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.6;
 }
 
 /* Responsive Design */
