@@ -1579,39 +1579,39 @@ body.scrolled-past-hero {
     .mobile-menu-toggle {
         display: flex;
     }
-
+    
     .nav-menu {
         display: none;
     }
-
+    
     .nav-container {
         padding: 0 20px;
     }
-
+    
     .main-tab-btn {
         padding: 16px 12px;
         font-size: 0.9rem;
     }
-
+    
     .tab-icon {
         margin-bottom: 8px;
     }
-
+    
     .store-btn {
         width: 50px;
         height: 50px;
     }
-
+    
     .cta-button {
         padding: 12px 24px;
         font-size: 1rem;
     }
-
+    
     .btn-app-store {
         padding: 10px 16px;
         font-size: 0.85rem;
     }
-
+    
     /* Better mobile hero layout */
     .hero-landing {
         padding-top: 100px; /* More space from navbar */
@@ -1622,7 +1622,7 @@ body.scrolled-past-hero {
         gap: 40px;
         margin-bottom: 40px;
     }
-
+    
     .icon-bg {
         width: 60px;
         height: 60px;
@@ -1664,7 +1664,7 @@ body.scrolled-past-hero {
     .app-store-buttons {
         margin-bottom: 30px;
     }
-
+    
     /* Improve grid layouts */
     .features-grid {
         display: flex;
@@ -1847,7 +1847,7 @@ body.scrolled-past-hero {
         width: 24px;
         height: 24px;
     }
-
+    
     /* Reduce geometric effects for performance on mobile */
     .geometric-shape {
         opacity: 0.3;
