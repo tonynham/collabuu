@@ -2861,11 +2861,16 @@ body.scrolled-past-hero {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 600;
     transition: background-color 0.2s ease;
 }
 
 .btn-primary:hover {
     background: var(--accent-green);
+    text-decoration: none;
 }
 
 .btn-secondary {
